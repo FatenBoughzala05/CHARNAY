@@ -30,6 +30,13 @@ const orderSchema = new mongoose.Schema(
         googleAddressId: String,
       },
     },
+    deleveryMethod: { type: String, required: true },
+    deleveryResult: {
+      id: String,
+      status: String,
+      update_time: String,
+      email_address: String,
+    },
     paymentMethod: { type: String, required: true },
     paymentResult: {
       id: String,

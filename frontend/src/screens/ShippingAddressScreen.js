@@ -49,7 +49,7 @@ export default function ShippingAddressScreen() {
         location: shippingAddress.location,
       })
     );
-    navigate('/payment');
+    navigate('/delevery');
   };
   useEffect(() => {
     ctxDispatch({ type: 'SET_FULLBOX_OFF' });

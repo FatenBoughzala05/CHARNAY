@@ -210,6 +210,10 @@ export default function OrderScreen() {
                     </a>
                   )}
               </Card.Text>
+              <Card.Title>Delevred By</Card.Title>
+              <Card.Text>
+                <strong>Method:</strong> {order.deleveryMethod}
+              </Card.Text>
               {order.isDelivered ? (
                 <MessageBox variant="success">
                   Delivered at {order.deliveredAt}
@@ -221,7 +225,7 @@ export default function OrderScreen() {
           </Card>
           <Card className="mb-3">
             <Card.Body>
-              <Card.Title>Payment</Card.Title>
+              <Card.Title>Paiment</Card.Title>
               <Card.Text>
                 <strong>Method:</strong> {order.paymentMethod}
               </Card.Text>
@@ -291,6 +295,16 @@ export default function OrderScreen() {
                     </Col>
                     <Col>
                       <strong>{order.totalPrice.toFixed(3)} TND</strong>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>
+                      <div>
+                        <Button className='homepaymentbutton'>
+                          🏡Home Payment</Button>
+                      </div>
                     </Col>
                   </Row>
                 </ListGroup.Item>

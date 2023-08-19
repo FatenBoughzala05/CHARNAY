@@ -16,6 +16,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import SignupScreen from './screens/SignupScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
+
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
@@ -38,6 +39,8 @@ import MapScreen from './screens/MapScreen';
 import ForgetPasswordScreen from './screens/ForgetPasswordScreen';
 import ResetPasswordScreen from './screens/ResetPasswordScreen';
 import WishListScreen from './screens/WishListScreen';
+import DeleveryMethodScreen from './screens/DeleveryMethodScreen ';
+
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo, fullBox } = state;
@@ -237,6 +240,7 @@ function App() {
                 path="/shipping"
                 element={<ShippingAddressScreen />}
               ></Route>
+              <Route path="/delevery" element={<DeleveryMethodScreen/>}></Route>
               <Route path="/payment" element={<PaymentMethodScreen />}></Route>
               <Route
                 path="/admin/dashboard"

@@ -637,7 +637,11 @@ select[disabled] {
   opacity: 0.6;
   cursor: not-allowed;
 }
-
+.homepaymentbutton{
+  background-color: #5c7b74;
+ width: 350px;
+color: white;
+}
 
 
 

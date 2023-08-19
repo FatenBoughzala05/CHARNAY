@@ -46,6 +46,7 @@ export default function PlaceOrderScreen() {
         {
           orderItems: cart.cartItems,
           shippingAddress: cart.shippingAddress,
+          deleveryMethod:cart.deleveryMethod,
           paymentMethod: cart.paymentMethod,
           itemsPrice: cart.itemsPrice,
           shippingPrice: cart.shippingPrice,
@@ -68,13 +69,18 @@ export default function PlaceOrderScreen() {
     }
   };
   useEffect(() => {
+    if (!cart.deleveryMethod) {
+      navigate('/delevery');
+    }
+  }, [cart, navigate]);
+  useEffect(() => {
     if (!cart.paymentMethod) {
       navigate('/payment');
     }
   }, [cart, navigate]);
   return (
     <div>
-      <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
+      <CheckoutSteps step1 step2 step3 step4 step5></CheckoutSteps>
       <Helmet>
         <title>Preview Order</title>
       </Helmet>
@@ -91,6 +97,13 @@ export default function PlaceOrderScreen() {
                 {cart.shippingAddress.country}
               </Card.Text>
               <Link to="/shipping">Edit</Link>
+              <br/>
+              <Card.Title>Delevred By</Card.Title>
+              <Card.Text> 
+                
+                <strong>Method:</strong> {cart.deleveryMethod}
+              </Card.Text>
+              <Link to="/delevery">Edit</Link>
             </Card.Body>
           </Card>
 
